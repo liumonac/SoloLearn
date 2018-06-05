@@ -28,7 +28,10 @@ public class NeighborNumbers {
 			String[] input2 = args[1].split(",");
 
 			outputMsg = finder.compareNumbersHash (input1, input2);
-			System.out.println(outputMsg);
+			System.out.println("HashTable Method:" + outputMsg);
+
+			outputMsg = finder.compareNumbers (input1, input2);
+			System.out.println("No Data Structure Method:" + outputMsg);
 		}
 
 	}
