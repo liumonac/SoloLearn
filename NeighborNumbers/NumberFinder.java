@@ -10,7 +10,7 @@ public class NumberFinder {
 		outputList = new ArrayList<String>();
 	}
 
-	public String compareNumbers (String[] input1, String[] input2) {
+	public String compareNumbersHash (String[] input1, String[] input2) {
 		numbers.clear();
 		outputList.clear();
 
@@ -41,6 +41,10 @@ public class NumberFinder {
 		outputMsg = outputMsg + "\"";
 
 		return outputMsg;
+	}
+
+	public String compareNumbers (String[] input1, String[] input2) {
+		
 	}
 
 }

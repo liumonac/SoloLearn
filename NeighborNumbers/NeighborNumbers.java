@@ -21,13 +21,13 @@ public class NeighborNumbers {
 		NumberFinder finder = new NumberFinder();
 		String outputMsg = "";
 
-		if (args.length < 2) {
+		if (args.length != 2) {
 			System.out.println("Usage: NeighborNumbers \"[x, y, z...]\" \"[x, y...]\"");
 		} else {
 			String[] input1 = args[0].split(",");
 			String[] input2 = args[1].split(",");
 
-			outputMsg = finder.compareNumbers (input1, input2);
+			outputMsg = finder.compareNumbersHash (input1, input2);
 			System.out.println(outputMsg);
 		}
 
