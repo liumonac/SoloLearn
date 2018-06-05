@@ -17,7 +17,7 @@ Bonus: Solve the same problem in O(n) time with an unsorted list of numbers.
 */
 
 class FindPair {
-public static boolean findSum (int[] collection, int find) {
+	public static boolean findSum (int[] collection, int find) {
 		boolean found = false;
 
 		int left = 0;
