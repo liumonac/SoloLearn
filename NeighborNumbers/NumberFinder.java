@@ -1,17 +1,10 @@
-import java.util.*;
-import java.lang.Integer;
+import java.util.Hashtable;
+import java.util.Arrays;
 
 public class NumberFinder {
-	private Hashtable<String, Integer> numbers;
-
-	public NumberFinder() {
-		numbers = new Hashtable<String, Integer>();
-	}
-
-	public String compareNumbersHash (String[] input1, String[] input2) {
+	public static String compareNumbersHash (String[] input1, String[] input2) {
+		Hashtable<String, Integer> numbers = new Hashtable<String, Integer>();
 		String outputMsg = "\"";
-
-		numbers.clear();
 
 		input1 = formatNumbers(input1);
 		input2 = formatNumbers(input2);
@@ -26,13 +19,12 @@ public class NumberFinder {
 			}
 		}
 
-		outputMsg = outputMsg.replaceAll(", $", "");
-		outputMsg = outputMsg + "\"";
+		outputMsg = formatOutput (outputMsg);
 
 		return outputMsg;
 	}
 
-	public String compareNumbers (String[] input1, String[] input2) {
+	public static String compareNumbers (String[] input1, String[] input2) {
 		String outputMsg = "\"";
 
 		input1 = formatNumbers(input1);
@@ -46,8 +38,7 @@ public class NumberFinder {
 			}
 		}
 
-		outputMsg = outputMsg.replaceAll(", $", "");
-		outputMsg = outputMsg + "\"";
+		outputMsg = formatOutput (outputMsg);
 
 		return outputMsg;
 	}
@@ -59,7 +50,7 @@ public class NumberFinder {
 	 ***************************/
 
 	//format numbers, get rid of non-numeric characters
-	private String[] formatNumbers (String strArr[]) {
+	private static String[] formatNumbers (String strArr[]) {
 		for (int i = 0; i < strArr.length; i++) {
 			strArr[i] = strArr[i].replaceAll("\\D+","");
 		}
@@ -68,6 +59,13 @@ public class NumberFinder {
 		Arrays.sort(strArr);
 
 		return strArr;
+	}
+
+	private static String formatOutput (String str) {
+		str = str.replaceAll(", $", "");
+		str = str + "\"";
+
+		return str;
 	}
 
 }
