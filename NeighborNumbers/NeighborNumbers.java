@@ -18,7 +18,6 @@ Bonus Task: try to solve the problem without using a Hashtable or any other data
 
 public class NeighborNumbers {
 	public static void main (String[] args) {
-		NumberFinder finder = new NumberFinder();
 		String outputMsg = "";
 
 		if (args.length != 2) {
@@ -27,10 +26,10 @@ public class NeighborNumbers {
 			String[] input1 = args[0].split(",");
 			String[] input2 = args[1].split(",");
 
-			outputMsg = finder.compareNumbersHash (input1, input2);
+			outputMsg = NumberFinder.compareNumbersHash (input1, input2);
 			System.out.println("HashTable Method:" + outputMsg);
 
-			outputMsg = finder.compareNumbers (input1, input2);
+			outputMsg = NumberFinder.compareNumbers (input1, input2);
 			System.out.println("No Data Structure Method:" + outputMsg);
 		}
 
