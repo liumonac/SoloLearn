@@ -44,7 +44,19 @@ public class NumberFinder {
 	}
 
 	public String compareNumbers (String[] input1, String[] input2) {
-		
+		String outputMsg = "\"";
+		for (String str1 : input1) {
+			for (String str2 : intput2) {
+				if (str1.equals (str2)) {
+					outputMsg = outputMsg + str1 + ", ";
+				}
+			}
+		}
+
+		outputMsg = outputMsg.replaceAll(", $", "");
+		outputMsg = outputMsg + "\"";
+
+		return outputMsg;
 	}
 
 }
