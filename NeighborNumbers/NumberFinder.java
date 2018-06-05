@@ -46,18 +46,20 @@ public class NumberFinder {
 	public String compareNumbers (String[] input1, String[] input2) {
 		String outputMsg = "\"";
 
+		//format numbers, get rid of non-numeric characters
+		for (int i = 0; i < input1.length; i++) {
+			input1[i] = input1[i].replaceAll("\\D+","");
+		}
+		for (int i = 0; i < input2.length; i++) {
+			input2[i] = input2[i].replaceAll("\\D+","");
+		}
+
 		//make sure output will be ascending order
 		Arrays.sort(input1);
 		Arrays.sort(input2);
 
 		for (String str1 : input1) {
-			//get rid of non-numeric characters
-			str1 = str1.replaceAll("\\D+","");
-
 			for (String str2 : input2) {
-				//get rid of non-numeric characters
-				str2 = str2.replaceAll("\\D+","");
-
 				if (str1.equals (str2)) {
 					outputMsg = outputMsg + str1 + ", ";
 				}
