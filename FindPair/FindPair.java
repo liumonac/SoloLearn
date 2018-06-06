@@ -15,7 +15,6 @@ Try to solve it in a linear time O(n)
 
 Bonus: Solve the same problem in O(n) time with an unsorted list of numbers.
 */
-
 class FindPair {
 	public static boolean findSum (int[] collection, int find) {
 		boolean found = false;
@@ -42,11 +41,15 @@ class FindPair {
 	}
 
 	public static void main (String[] args) {
-		int[] collection = {1, 2, 4, 4};
+		int[] collection = {4, 2, 4, 1};
 
 		if (args.length != 1) {
 			System.out.println ("Usage: FindPair [num]");
 		} else {
+			//use radixSort to handle unsorted list and still be linear
+			//O(digits * n)
+			collection = RadixSort.radixSort (collection);
+
 			int find = Integer.parseInt (args[0]);
 
 			boolean found = findSum (collection, find);
